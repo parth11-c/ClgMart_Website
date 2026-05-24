@@ -318,7 +318,7 @@ export function CinematicHero({
 
         .to({}, { duration: 3 }) // Pause at Phase 3
 
-        // ------------------ Transition to Phase 4 (Smart Search) ------------------
+        // ------------------ Transition to Phase 4 (Product Listing) ------------------
         .to([".phase-3", ".card-left-text-3", ".floating-badge-3"], { y: -30, autoAlpha: 0, ease: "power3.in", duration: 1.5, stagger: 0.1 })
         
         // Phase 4 elements fade in
@@ -329,7 +329,7 @@ export function CinematicHero({
 
         .to({}, { duration: 3 }) // Pause at Phase 4
 
-        // ------------------ Transition to Phase 5 (Campus Map Meetups) ------------------
+        // ------------------ Transition to Phase 5 (Categories & Search) ------------------
         .to([".phase-4", ".card-left-text-4", ".floating-badge-4"], { y: -30, autoAlpha: 0, ease: "power3.in", duration: 1.5, stagger: 0.1 })
         
         // Phase 5 elements fade in
@@ -340,7 +340,7 @@ export function CinematicHero({
 
         .to({}, { duration: 3 }) // Pause at Phase 5
 
-        // ------------------ Transition to Phase 6 (Wishlists) ------------------
+        // ------------------ Transition to Phase 6 (Sustainable Reuse) ------------------
         .to([".phase-5", ".card-left-text-5", ".floating-badge-5"], { y: -30, autoAlpha: 0, ease: "power3.in", duration: 1.5, stagger: 0.1 })
         
         // Phase 6 elements fade in
@@ -384,6 +384,11 @@ export function CinematicHero({
       <style dangerouslySetInnerHTML={{ __html: INJECTED_STYLES }} />
       <div className="film-grain" aria-hidden="true" />
       <div className="bg-grid-theme absolute inset-0 z-0 pointer-events-none opacity-50" aria-hidden="true" />
+
+      {/* ParthB Watermark Signature */}
+      <div className="absolute top-6 right-6 z-50 text-sm md:text-base font-mono tracking-[0.25em] text-neutral-500/50 select-none pointer-events-none">
+        PARTHB
+      </div>
 
       {/* BACKGROUND LAYER: Hero Texts */}
       <div className="hero-text-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 will-change-transform transform-style-3d">
@@ -513,44 +518,45 @@ export function CinematicHero({
                       </div>
                     </div>
 
-                    {/* PHASE 2 UI: Chat Interface */}
+                    {/* PHASE 2 UI: WhatsApp Integration */}
                     <div className="phase-2 absolute inset-0 pt-12 px-5 pb-8 flex flex-col opacity-0 pointer-events-none">
                       <div className="phone-widget-2 flex justify-between items-center mb-6">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-400/30 flex items-center justify-center">
+                          <div className="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center shadow-lg">
                             <span className="text-white font-bold text-sm">AL</span>
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-base font-bold tracking-tight text-white">Alex (Seller)</span>
-                            <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
-                              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div> Online
+                            <span className="text-base font-bold tracking-tight text-white flex items-center gap-1">
+                              Alex (Seller)
+                              <span className="text-[9px] px-1.5 py-0.5 bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 rounded-full font-bold">WhatsApp</span>
                             </span>
+                            <span className="text-[10px] text-neutral-400 font-medium">Auto-generated deep link</span>
                           </div>
                         </div>
                       </div>
 
                       <div className="flex-1 flex flex-col gap-4 mt-2">
-                        <div className="phone-widget-2 self-start max-w-[85%] bg-neutral-800/80 backdrop-blur-md rounded-2xl rounded-tl-sm p-3 border border-white/5 shadow-lg">
-                          <p className="text-[11px] text-white leading-relaxed">Hey! Is the Calculus book still available?</p>
-                          <span className="text-[8px] text-neutral-400 mt-1 block">10:42 AM</span>
+                        <div className="phone-widget-2 self-end max-w-[85%] bg-emerald-800/80 backdrop-blur-md rounded-2xl rounded-tr-sm p-3 border border-emerald-500/20 shadow-lg">
+                          <p className="text-[11px] text-white leading-relaxed">Hi Alex! I&apos;m interested in your &apos;Calculus 14th Ed&apos; listed on ClgMart. Is it still available?</p>
+                          <span className="text-[8px] text-emerald-200 mt-1 block text-right font-medium">10:42 AM</span>
                         </div>
                         
-                        <div className="phone-widget-2 self-end max-w-[85%] bg-blue-600/90 backdrop-blur-md rounded-2xl rounded-tr-sm p-3 border border-blue-400/20 shadow-lg">
-                          <p className="text-[11px] text-white leading-relaxed">Yes it is! I'm on campus right now.</p>
-                          <span className="text-[8px] text-blue-200 mt-1 block text-right">10:45 AM</span>
+                        <div className="phone-widget-2 self-start max-w-[85%] bg-neutral-800/80 backdrop-blur-md rounded-2xl rounded-tl-sm p-3 border border-white/5 shadow-lg">
+                          <p className="text-[11px] text-white leading-relaxed">Hey! Yes, it is. I&apos;m on campus near the library right now.</p>
+                          <span className="text-[8px] text-neutral-400 mt-1 block">10:45 AM</span>
                         </div>
 
-                        <div className="phone-widget-2 self-start max-w-[85%] bg-neutral-800/80 backdrop-blur-md rounded-2xl rounded-tl-sm p-3 border border-white/5 shadow-lg">
-                          <p className="text-[11px] text-white leading-relaxed">Awesome. Can we meet at the library at 1 PM?</p>
-                          <span className="text-[8px] text-neutral-400 mt-1 block">10:46 AM</span>
+                        <div className="phone-widget-2 self-end max-w-[85%] bg-emerald-800/80 backdrop-blur-md rounded-2xl rounded-tr-sm p-3 border border-emerald-500/20 shadow-lg">
+                          <p className="text-[11px] text-white leading-relaxed">Great, I can meet you there in 5 minutes!</p>
+                          <span className="text-[8px] text-emerald-200 mt-1 block text-right font-medium">10:46 AM</span>
                         </div>
                       </div>
 
-                      <div className="phone-widget-2 mt-auto w-full h-12 bg-white/5 border border-white/10 rounded-full flex items-center px-4 shadow-inner">
-                        <span className="text-[11px] text-neutral-500">Type a message...</span>
-                        <div className="ml-auto w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
-                          <svg className="w-3 h-3 text-white ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-                        </div>
+                      <div className="phone-widget-2 mt-auto w-full py-3 bg-emerald-600 hover:bg-emerald-500 rounded-full flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/50 border border-emerald-400/20 text-white font-bold text-xs">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 448 512" aria-hidden="true">
+                          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                        </svg>
+                        Chat on WhatsApp
                       </div>
                     </div>
 
@@ -569,155 +575,158 @@ export function CinematicHero({
                         <h2 className="text-2xl font-bold text-white tracking-tight">John Doe</h2>
                         <div className="flex items-center justify-center gap-1 mt-1">
                           <svg className="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
-                          <span className="text-[11px] text-emerald-400 font-medium">john.doe@university.edu</span>
+                          <span className="text-[11px] text-emerald-400 font-medium">john.doe@college.edu</span>
                         </div>
                       </div>
 
                       <div className="w-full space-y-3">
                         <div className="phone-widget-3 w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex justify-between items-center backdrop-blur-sm">
                           <div className="flex flex-col">
-                            <span className="text-[11px] text-neutral-400 font-medium">Seller Rating</span>
-                            <div className="flex items-center mt-1">
-                              {[...Array(5)].map((_,i) => (
-                                <svg key={i} className="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                              ))}
-                              <span className="text-xs font-bold text-white ml-2">5.0</span>
-                            </div>
+                            <span className="text-[11px] text-neutral-400 font-medium">Verification Status</span>
+                            <span className="text-xs font-bold text-emerald-400 mt-1 flex items-center gap-1">
+                              Verified Student
+                            </span>
                           </div>
-                          <div className="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center">
-                            <span className="text-lg">🌟</span>
+                          <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
+                            <span className="text-lg">🛡️</span>
                           </div>
                         </div>
 
                         <div className="phone-widget-3 w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex justify-between items-center backdrop-blur-sm">
                           <div className="flex flex-col">
-                            <span className="text-[11px] text-neutral-400 font-medium">Items Sold</span>
-                            <span className="text-sm font-bold text-white mt-0.5">24 Items</span>
+                            <span className="text-[11px] text-neutral-400 font-medium">Access Code</span>
+                            <span className="text-xs font-mono font-bold text-white mt-1">CAMPUS-MEMBER</span>
                           </div>
                           <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center">
-                            <span className="text-lg">📦</span>
+                            <span className="text-lg">🔑</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* PHASE 4 UI: Smart Search */}
+                    {/* PHASE 4 UI: Simple Product Listing */}
                     <div className="phase-4 absolute inset-0 pt-12 px-5 pb-8 flex flex-col opacity-0 pointer-events-none">
-                      {/* Search Bar */}
-                      <div className="phone-widget-4 w-full h-11 bg-white/10 border border-white/15 rounded-xl flex items-center px-3 mb-4 shadow-inner">
+                      <span className="phone-widget-4 text-xs font-bold text-neutral-400 uppercase tracking-widest mb-1.5 text-left">Dashboard</span>
+                      <h4 className="phone-widget-4 text-base font-extrabold tracking-tight text-white mb-4 text-left">Create New Listing</h4>
+
+                      {/* Image Upload Box */}
+                      <div className="phone-widget-4 w-full h-28 bg-white/5 border-2 border-dashed border-white/15 rounded-2xl flex flex-col items-center justify-center mb-4 shadow-inner relative overflow-hidden group">
+                        <div className="absolute inset-0 bg-neutral-950/40 flex items-center justify-center">
+                          <span className="text-2xl text-emerald-400">📷</span>
+                        </div>
+                        <div className="mt-8 text-[9px] font-bold text-emerald-400 flex items-center gap-1">
+                          study_lamp.png (1.2 MB) ✓
+                        </div>
+                      </div>
+
+                      {/* Listing Inputs Mockup */}
+                      <div className="space-y-3">
+                        <div className="phone-widget-4 widget-depth rounded-xl p-3 flex flex-col items-start gap-1">
+                          <span className="text-[8px] text-neutral-400 uppercase tracking-wider font-bold">Product Title</span>
+                          <span className="text-xs font-bold text-white">LED Dorm Desk Lamp</span>
+                        </div>
+
+                        <div className="phone-widget-4 flex gap-3">
+                          <div className="flex-1 widget-depth rounded-xl p-3 flex flex-col items-start gap-1">
+                            <span className="text-[8px] text-neutral-400 uppercase tracking-wider font-bold">Category</span>
+                            <span className="text-xs font-bold text-white">Hostel Items</span>
+                          </div>
+                          <div className="w-24 widget-depth rounded-xl p-3 flex flex-col items-start gap-1">
+                            <span className="text-[8px] text-neutral-400 uppercase tracking-wider font-bold">Price</span>
+                            <span className="text-xs font-bold text-white">$15</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="phone-widget-4 mt-auto w-full py-3 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center font-extrabold text-xs shadow-lg shadow-blue-500/20 text-white">
+                        Publish Listing
+                      </div>
+                    </div>
+
+                    {/* PHASE 5 UI: Product Categories & Search */}
+                    <div className="phase-5 absolute inset-0 pt-12 px-5 pb-8 flex flex-col opacity-0 pointer-events-none">
+                      {/* Search Input */}
+                      <div className="phone-widget-5 w-full h-11 bg-white/10 border border-white/15 rounded-xl flex items-center px-3 mb-4 shadow-inner">
                         <svg className="w-4 h-4 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        <span className="text-xs font-semibold text-white tracking-wide">MATH 201</span>
+                        <span className="text-xs font-semibold text-white tracking-wide">Mini Fridge</span>
                         <div className="ml-auto w-4 h-4 rounded-full bg-white/15 flex items-center justify-center">
                           <span className="text-[8px] font-bold text-neutral-400">✖</span>
                         </div>
                       </div>
 
-                      {/* Filters */}
-                      <div className="phone-widget-4 flex gap-2 overflow-x-auto pb-3 mb-3 border-b border-white/5 no-scrollbar">
-                        <span className="text-[10px] px-3 py-1 bg-blue-500 text-white rounded-full font-bold shadow-md shadow-blue-500/30 shrink-0">Textbooks</span>
-                        <span className="text-[10px] px-3 py-1 bg-white/5 border border-white/10 text-neutral-300 rounded-full font-medium shrink-0">Study Guides</span>
-                        <span className="text-[10px] px-3 py-1 bg-white/5 border border-white/10 text-neutral-300 rounded-full font-medium shrink-0">Equipment</span>
+                      {/* Category Selector Pills */}
+                      <div className="phone-widget-5 flex gap-2 overflow-x-auto pb-3 mb-3 border-b border-white/5 no-scrollbar">
+                        <span className="text-[10px] px-3 py-1 bg-blue-500 text-white rounded-full font-bold shadow-md shadow-blue-500/30 shrink-0">Hostel Items</span>
+                        <span className="text-[10px] px-3 py-1 bg-white/5 border border-white/10 text-neutral-300 rounded-full font-medium shrink-0">Books</span>
+                        <span className="text-[10px] px-3 py-1 bg-white/5 border border-white/10 text-neutral-300 rounded-full font-medium shrink-0">Electronics</span>
                       </div>
 
-                      {/* Search Results */}
+                      {/* Results */}
                       <div className="space-y-3">
-                        <div className="phone-widget-4 widget-depth rounded-2xl p-3 flex items-center border-l-4 border-l-blue-500">
+                        <div className="phone-widget-5 widget-depth rounded-2xl p-3 flex items-center border-l-4 border-l-blue-500">
                           <div className="flex-1 text-left min-w-0">
-                            <p className="text-xs font-bold text-white truncate">Calculus III: MATH 201</p>
-                            <p className="text-[10px] text-blue-300 font-semibold mt-0.5">$30 • Mint Condition</p>
-                            <p className="text-[8px] text-neutral-400 mt-1">Listed by Jessica S. • 150m away</p>
+                            <p className="text-xs font-bold text-white truncate">Compact Mini Fridge</p>
+                            <p className="text-[10px] text-blue-300 font-semibold mt-0.5">$45 • Excellent condition</p>
+                            <p className="text-[8px] text-neutral-400 mt-1">Listed by Sarah T. • Hostel B</p>
                           </div>
-                          <span className="text-xs font-bold text-neutral-400">5.0 ★</span>
+                          <span className="text-xs font-bold text-neutral-200">Hostel</span>
                         </div>
 
-                        <div className="phone-widget-4 widget-depth rounded-2xl p-3 flex items-center border-l-4 border-l-purple-500">
+                        <div className="phone-widget-5 widget-depth rounded-2xl p-3 flex items-center border-l-4 border-l-blue-500">
                           <div className="flex-1 text-left min-w-0">
-                            <p className="text-xs font-bold text-white truncate">MATH 201 Exam prep packet</p>
-                            <p className="text-[10px] text-purple-300 font-semibold mt-0.5">$10 • Digital PDF</p>
-                            <p className="text-[8px] text-neutral-400 mt-1">Listed by David K. • Instantly Shared</p>
+                            <p className="text-xs font-bold text-white truncate">Under-Bed Storage Organizer</p>
+                            <p className="text-[10px] text-blue-300 font-semibold mt-0.5">$12 • Moving out sale</p>
+                            <p className="text-[8px] text-neutral-400 mt-1">Listed by Alex K. • Hostel C</p>
                           </div>
-                          <span className="text-xs font-bold text-neutral-400">4.9 ★</span>
+                          <span className="text-xs font-bold text-neutral-200">Hostel</span>
                         </div>
                       </div>
                     </div>
 
-                    {/* PHASE 5 UI: Campus Map Meetups */}
-                    <div className="phase-5 absolute inset-0 pt-12 px-5 pb-8 flex flex-col opacity-0 pointer-events-none">
-                      <div className="phone-widget-5 flex justify-between items-center mb-4">
-                        <span className="text-sm font-bold tracking-tight text-white">Safety Meetup Zones</span>
-                        <span className="text-[9px] px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-full font-bold">4 Safe Zones</span>
-                      </div>
-
-                      {/* Schematic Map Representation */}
-                      <div className="phone-widget-5 flex-1 relative bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden shadow-inner flex items-center justify-center">
-                        <div className="absolute inset-0 opacity-15" style={{ 
-                          backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)',
-                          backgroundSize: '16px 16px' 
-                        }} />
-                        
-                        {/* Map paths */}
-                        <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 200 300">
-                          <path d="M 10 50 Q 80 80 120 40 T 190 120" fill="none" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
-                          <path d="M 30 250 Q 110 180 180 230" fill="none" stroke="white" strokeWidth="2" />
-                          <circle cx="120" cy="40" r="4" fill="#3B82F6" />
-                          <circle cx="110" cy="180" r="4" fill="#3B82F6" />
-                        </svg>
-
-                        {/* Safe Zone Marker Card */}
-                        <div className="absolute z-10 flex flex-col items-center justify-center">
-                          <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/40 animate-bounce mb-1">
-                            <span className="text-sm">🏫</span>
-                          </div>
-                          <div className="bg-neutral-950/95 border border-white/15 rounded-xl px-2.5 py-1.5 text-center shadow-xl backdrop-blur-md">
-                            <p className="text-[10px] font-extrabold text-white tracking-wide">STUDENT UNION</p>
-                            <p className="text-[8px] text-emerald-400 font-bold mt-0.5 flex items-center justify-center gap-0.5">
-                              <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.267 3.455a.75.75 0 00-.708.523L4.54 7H2.25a.75.75 0 000 1.5h2.72a.75.75 0 00.708-.523L6.7 5.088l1.71 5.127a.75.75 0 001.416 0l1.71-5.127 1.022 3.067A.75.75 0 0013.27 8.75h4.48a.75.75 0 000-1.5h-3.96l-1.53-4.59a.75.75 0 00-1.415 0L9.123 7.82l-1.44-4.321a.75.75 0 00-.712-.513z" /></svg>
-                              Verified Safe Zone
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* PHASE 6 UI: Wishlists & Alerts */}
+                    {/* PHASE 6 UI: Sustainable Resource Reuse */}
                     <div className="phase-6 absolute inset-0 pt-12 px-5 pb-8 flex flex-col opacity-0 pointer-events-none">
                       <div className="phone-widget-6 flex justify-between items-center mb-6">
                         <div className="flex flex-col">
-                          <span className="text-[10px] text-neutral-400 uppercase tracking-widest font-bold">Notifications</span>
-                          <span className="text-base font-bold tracking-tight text-white">Deal Alerts</span>
+                          <span className="text-[10px] text-neutral-400 uppercase tracking-widest font-bold">My Impact</span>
+                          <span className="text-base font-bold tracking-tight text-white">Sustainability Hub</span>
                         </div>
-                        <span className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center text-[9px] font-black text-white animate-pulse">1</span>
+                        <span className="w-7 h-7 bg-emerald-500/20 border border-emerald-500/40 rounded-full flex items-center justify-center text-sm">🌱</span>
                       </div>
 
-                      {/* Pop Match Notification Card */}
-                      <div className="phone-widget-6 w-full bg-gradient-to-br from-blue-600/30 to-purple-600/20 border border-blue-400/30 rounded-2xl p-4 mb-4 backdrop-blur-sm shadow-xl">
-                        <div className="flex gap-3">
-                          <div className="w-9 h-9 rounded-xl bg-blue-500 flex items-center justify-center shrink-0">
-                            <span className="text-lg">🔔</span>
-                          </div>
-                          <div className="flex-1 text-left min-w-0">
-                            <h4 className="text-xs font-bold text-white">Wishlist Alert!</h4>
-                            <p className="text-[10px] text-neutral-200 mt-1 leading-relaxed">
-                              &apos;Chem 101 Lab Coat&apos; was listed by Marcus G. for <span className="text-emerald-400 font-bold">$12</span>!
-                            </p>
-                          </div>
+                      {/* Sustainability Impact Dashboard */}
+                      <div className="phone-widget-6 w-full bg-gradient-to-br from-emerald-600/30 to-teal-600/20 border border-emerald-400/30 rounded-2xl p-4 mb-4 backdrop-blur-sm shadow-xl flex flex-col items-center">
+                        <div className="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/30 mb-2">
+                          <span className="text-xl">♻️</span>
                         </div>
-                        <div className="flex gap-2 mt-3.5">
-                          <button className="flex-1 py-1.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-[9px] font-bold transition-all shadow-md shadow-blue-500/20">Chat Now</button>
-                          <button className="px-3 py-1.5 bg-white/5 border border-white/10 text-neutral-400 rounded-lg text-[9px] font-bold">Dismiss</button>
+                        <h4 className="text-xs font-bold text-white">Eco-friendly Exchanger</h4>
+                        <p className="text-[9px] text-emerald-200 mt-0.5">Reducing campus waste</p>
+                        
+                        <div className="w-full grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-emerald-500/20 text-center">
+                          <div>
+                            <p className="text-xs font-extrabold text-white">8</p>
+                            <p className="text-[7px] text-neutral-300 uppercase tracking-wider">Reused</p>
+                          </div>
+                          <div>
+                            <p className="text-xs font-extrabold text-white">$140</p>
+                            <p className="text-[7px] text-neutral-300 uppercase tracking-wider">Saved</p>
+                          </div>
+                          <div>
+                            <p className="text-xs font-extrabold text-white">12kg</p>
+                            <p className="text-[7px] text-neutral-300 uppercase tracking-wider">CO2 Saved</p>
+                          </div>
                         </div>
                       </div>
 
-                      {/* Wishlist Tracked Items */}
-                      <h4 className="phone-widget-6 text-[10px] uppercase font-bold text-neutral-400 tracking-wider mb-2.5 text-left">Tracked Items</h4>
+                      {/* Recycled Products Log */}
+                      <span className="phone-widget-6 text-[9px] uppercase font-bold text-neutral-400 tracking-wider mb-2 text-left">Sustainable Cycle</span>
                       <div className="space-y-2">
-                        <div className="phone-widget-6 widget-depth rounded-xl px-3 py-2.5 flex justify-between items-center">
-                          <span className="text-xs font-bold text-neutral-200">Ti-84 Plus Calculator</span>
-                          <span className="text-[9px] px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full font-semibold">Active</span>
+                        <div className="phone-widget-6 widget-depth rounded-xl px-3 py-2 flex justify-between items-center">
+                          <span className="text-xs font-bold text-neutral-200">Reused Electronics</span>
+                          <span className="text-[8px] font-semibold text-emerald-400">Completed</span>
                         </div>
-                        <div className="phone-widget-6 widget-depth rounded-xl px-3 py-2.5 flex justify-between items-center">
-                          <span className="text-xs font-bold text-neutral-200">Chem 101 Lab Coat</span>
-                          <span className="text-[9px] px-2 py-0.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-full font-semibold">Match Found</span>
+                        <div className="phone-widget-6 widget-depth rounded-xl px-3 py-2 flex justify-between items-center">
+                          <span className="text-xs font-bold text-neutral-200">Recycled Textbooks</span>
+                          <span className="text-[8px] font-semibold text-emerald-400">Completed</span>
                         </div>
                       </div>
                     </div>
@@ -748,56 +757,56 @@ export function CinematicHero({
 
                 {/* Phase 2 Badges */}
                 <div className="floating-badge-2 opacity-0 absolute flex top-10 lg:top-20 left-[-10px] lg:left-[-60px] floating-ui-badge rounded-xl lg:rounded-2xl p-3 lg:p-4 items-center gap-3 lg:gap-4 z-30">
-                  <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gradient-to-b from-blue-500/20 to-blue-900/10 flex items-center justify-center border border-blue-400/30">
+                  <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gradient-to-b from-emerald-500/20 to-emerald-900/10 flex items-center justify-center border border-emerald-400/30">
                     <span className="text-base lg:text-xl drop-shadow-lg">💬</span>
                   </div>
                   <div>
-                    <p className="text-white text-xs lg:text-sm font-bold">New Message</p>
-                    <p className="text-blue-200/50 text-[10px] lg:text-xs">Alex sent a message</p>
+                    <p className="text-white text-xs lg:text-sm font-bold">WhatsApp Link</p>
+                    <p className="text-emerald-200/50 text-[10px] lg:text-xs">Connect in 1 tap</p>
                   </div>
                 </div>
 
                 {/* Phase 3 Badges */}
                 <div className="floating-badge-3 opacity-0 absolute flex bottom-16 lg:bottom-24 right-[-20px] lg:right-[-90px] floating-ui-badge rounded-xl lg:rounded-2xl p-3 lg:p-4 items-center gap-3 lg:gap-4 z-30">
                   <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gradient-to-b from-emerald-500/20 to-emerald-900/10 flex items-center justify-center border border-emerald-400/30">
-                    <span className="text-base lg:text-xl drop-shadow-lg">✅</span>
+                    <span className="text-base lg:text-xl drop-shadow-lg">🛡️</span>
                   </div>
                   <div>
                     <p className="text-white text-xs lg:text-sm font-bold">Student Verified</p>
-                    <p className="text-emerald-200/50 text-[10px] lg:text-xs">University email confirmed</p>
+                    <p className="text-emerald-200/50 text-[10px] lg:text-xs">College email confirmed</p>
                   </div>
                 </div>
 
                 {/* Phase 4 Badges */}
                 <div className="floating-badge-4 opacity-0 absolute flex top-6 lg:top-12 left-[-15px] lg:left-[-80px] floating-ui-badge rounded-xl lg:rounded-2xl p-3 lg:p-4 items-center gap-3 lg:gap-4 z-30">
-                  <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gradient-to-b from-amber-500/20 to-amber-900/10 flex items-center justify-center border border-amber-400/30">
-                    <span className="text-base lg:text-xl drop-shadow-lg">🔍</span>
+                  <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gradient-to-b from-blue-500/20 to-blue-900/10 flex items-center justify-center border border-blue-400/30">
+                    <span className="text-base lg:text-xl drop-shadow-lg">📤</span>
                   </div>
                   <div>
-                    <p className="text-white text-xs lg:text-sm font-bold">Course Search</p>
-                    <p className="text-amber-200/50 text-[10px] lg:text-xs">Search books by MATH 201</p>
+                    <p className="text-white text-xs lg:text-sm font-bold">List Instantly</p>
+                    <p className="text-blue-200/50 text-[10px] lg:text-xs">List in 30 seconds</p>
                   </div>
                 </div>
 
                 {/* Phase 5 Badges */}
                 <div className="floating-badge-5 opacity-0 absolute flex bottom-12 lg:bottom-20 right-[-15px] lg:right-[-80px] floating-ui-badge rounded-xl lg:rounded-2xl p-3 lg:p-4 items-center gap-3 lg:gap-4 z-30">
-                  <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gradient-to-b from-emerald-500/20 to-emerald-900/10 flex items-center justify-center border border-emerald-400/30">
-                    <span className="text-base lg:text-xl drop-shadow-lg">📍</span>
+                  <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gradient-to-b from-amber-500/20 to-amber-900/10 flex items-center justify-center border border-amber-400/30">
+                    <span className="text-base lg:text-xl drop-shadow-lg">🔍</span>
                   </div>
                   <div>
-                    <p className="text-white text-xs lg:text-sm font-bold">Safety Points</p>
-                    <p className="text-emerald-200/50 text-[10px] lg:text-xs">Dorm Lobby Safe Zones</p>
+                    <p className="text-white text-xs lg:text-sm font-bold">Quick Discovery</p>
+                    <p className="text-amber-200/50 text-[10px] lg:text-xs">Search by categories</p>
                   </div>
                 </div>
 
                 {/* Phase 6 Badges */}
                 <div className="floating-badge-6 opacity-0 absolute flex top-10 lg:top-20 left-[-10px] lg:left-[-60px] floating-ui-badge rounded-xl lg:rounded-2xl p-3 lg:p-4 items-center gap-3 lg:gap-4 z-30">
-                  <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gradient-to-b from-purple-500/20 to-purple-900/10 flex items-center justify-center border border-purple-400/30">
-                    <span className="text-base lg:text-xl drop-shadow-lg">🔔</span>
+                  <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gradient-to-b from-emerald-500/20 to-emerald-900/10 flex items-center justify-center border border-emerald-400/30">
+                    <span className="text-base lg:text-xl drop-shadow-lg">♻️</span>
                   </div>
                   <div>
-                    <p className="text-white text-xs lg:text-sm font-bold">Instant Match</p>
-                    <p className="text-purple-200/50 text-[10px] lg:text-xs">Alerted in 10 seconds!</p>
+                    <p className="text-white text-xs lg:text-sm font-bold">Sustainable Cycle</p>
+                    <p className="text-emerald-200/50 text-[10px] lg:text-xs">Reuse & recycle resources</p>
                   </div>
                 </div>
 
@@ -819,50 +828,50 @@ export function CinematicHero({
               {/* Phase 2 Text */}
               <div className="card-left-text-2 absolute inset-0 flex flex-col justify-center opacity-0 pointer-events-none">
                 <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-0 lg:mb-5 tracking-tight">
-                  Secure In-App Chat.
+                  WhatsApp Contact Link.
                 </h3>
                 <p className="hidden md:block text-blue-100/70 text-sm md:text-base lg:text-lg font-normal leading-relaxed mx-auto lg:mx-0 max-w-sm lg:max-w-none">
-                  Negotiate prices, ask questions, and arrange campus meetups directly through our <span className="text-white font-semibold">encrypted chat</span>. Never share your personal phone number again.
+                  Connect instantly. Buyers can contact sellers directly through auto-generated <span className="text-white font-semibold">WhatsApp deep links</span>, facilitating faster and familiar communication without the bloat of in-app messaging.
                 </p>
               </div>
 
               {/* Phase 3 Text */}
               <div className="card-left-text-3 absolute inset-0 flex flex-col justify-center opacity-0 pointer-events-none">
                 <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-0 lg:mb-5 tracking-tight">
-                  Verified Student Network.
+                  Verified Student Access.
                 </h3>
                 <p className="hidden md:block text-blue-100/70 text-sm md:text-base lg:text-lg font-normal leading-relaxed mx-auto lg:mx-0 max-w-sm lg:max-w-none">
-                  Trade with total confidence. <span className="text-white font-semibold">ClgMart</span> requires a valid university <span className="text-emerald-400 font-mono bg-emerald-400/10 px-1 py-0.5 rounded">.edu</span> email to join, ensuring a safe, scam-free community.
+                  Trade with total confidence. <span className="text-white font-semibold">ClgMart</span> requires secure campus authentication to join, ensuring verified campus users only to eliminate spam and fake accounts.
                 </p>
               </div>
 
               {/* Phase 4 Text */}
               <div className="card-left-text-4 absolute inset-0 flex flex-col justify-center opacity-0 pointer-events-none">
                 <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-0 lg:mb-5 tracking-tight">
-                  Smart Campus Search.
+                  Simple Product Listing.
                 </h3>
                 <p className="hidden md:block text-blue-100/70 text-sm md:text-base lg:text-lg font-normal leading-relaxed mx-auto lg:mx-0 max-w-sm lg:max-w-none">
-                  Instantly locate gear and textbooks required for your classes. Filter listings by <span className="text-white font-semibold">course code</span> or category to find exactly what you need near your dorms.
+                  Declutter your dorm in seconds. Upload images, write a description, select a category, and list your items instantly through a simple, streamlined <span className="text-white font-semibold">seller dashboard</span>.
                 </p>
               </div>
 
               {/* Phase 5 Text */}
               <div className="card-left-text-5 absolute inset-0 flex flex-col justify-center opacity-0 pointer-events-none">
                 <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-0 lg:mb-5 tracking-tight">
-                  Safe Handover Zones.
+                  Organized Campus Search.
                 </h3>
                 <p className="hidden md:block text-blue-100/70 text-sm md:text-base lg:text-lg font-normal leading-relaxed mx-auto lg:mx-0 max-w-sm lg:max-w-none">
-                  Trade safety-first. Coordinate handovers at designated, well-lit campus safety zones such as the <span className="text-white font-semibold">Student Union</span> or Library. Avoid sketchy locations entirely.
+                  Find exactly what you need quickly. Browse listings organized by categories like books, electronics, accessories, and hostel items, instead of searching through <span className="text-white font-semibold">chaotic chat groups</span>.
                 </p>
               </div>
 
               {/* Phase 6 Text */}
               <div className="card-left-text-6 absolute inset-0 flex flex-col justify-center opacity-0 pointer-events-none">
                 <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-0 lg:mb-5 tracking-tight">
-                  Wishlist & Price Alerts.
+                  Sustainable Campus Reuse.
                 </h3>
                 <p className="hidden md:block text-blue-100/70 text-sm md:text-base lg:text-lg font-normal leading-relaxed mx-auto lg:mx-0 max-w-sm lg:max-w-none">
-                  Track expensive textbooks or gear. Get push notifications the <span className="text-white font-semibold">very second</span> another student lists them, securing the best bargains instantly.
+                  Promote sustainability and reduce waste within your college. Save money and support your campus ecosystem by <span className="text-white font-semibold">recycling and reusing</span> gadgets, books, and hostel gear.
                 </p>
               </div>
             </div>

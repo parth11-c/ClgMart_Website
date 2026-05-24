@@ -3,8 +3,8 @@ import { CinematicHero } from "@/components/ui/cinematic-landing-hero";
 
 export const metadata: Metadata = {
   title: "ClgMart - College Campus Student Marketplace",
-  description: "Buy, sell, and trade textbooks, electronics, and college essentials safely with verified students on campus. No shipping fees, no hassles.",
-  keywords: ["college marketplace", "student peer to peer trading", "buy textbooks college", "sell books campus", "verified college network", "ClgMart app"],
+  description: "ClgMart is a verified campus-exclusive marketplace for students to buy, sell, and exchange books, electronics, accessories, and hostel items.",
+  keywords: ["college marketplace", "student peer to peer trading", "buy textbooks college", "sell books campus", "verified college network", "ClgMart app", "student marketplace"],
 };
 
 export default function Page() {
